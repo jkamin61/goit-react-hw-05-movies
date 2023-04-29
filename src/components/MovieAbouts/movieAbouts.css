@@ -1,0 +1,41 @@
+.movie-abouts {
+  display: flex;
+  flex-direction: row;
+}
+
+.movie-abouts__image {
+  width: 300px;
+  height: 450px;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+.movie-abouts__additional-info {
+  margin-left: 10px;
+}
+
+.movie-search {
+  width: 150px;
+  margin-left: 10px;
+}
+
+.movie-search__list {
+  list-style-type: none;
+}
+
+.movie-search__list > li {
+  padding-left: 1rem;
+  text-indent: -0.75rem;
+}
+
+.movie-search__list li::before {
+  content: '🎞️ ';
+}
+
+.movie-search__item {
+  max-width: fit-content;
+}
+.movie-search__item:hover {
+  cursor: pointer;
+  text-decoration-line: underline;
+}
