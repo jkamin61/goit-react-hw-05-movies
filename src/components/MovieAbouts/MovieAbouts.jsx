@@ -21,10 +21,12 @@ const MovieAbouts = () => {
   }, [movieId]);
   const handleCastVisibility = () => {
     document.querySelector('.cast-list').hidden = false;
+    document.querySelector('.reviews').hidden = true;
     navigate(`/movies/${movieId}/cast`);
   };
   const handleReviewsVisibility = () => {
     document.querySelector('.reviews').hidden = false;
+    document.querySelector('.cast-list').hidden = true;
     navigate(`/movies/${movieId}/reviews`);
   };
   return selectedMovie && (
