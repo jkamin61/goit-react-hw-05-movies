@@ -34,15 +34,16 @@ const Movies = () => {
   return (
     <div className={'Movies'}>
       <MovieHeader></MovieHeader>
-      <form>
-        <input className={'movie-search'} type={'text'} onChange={handleGettingValue} onSubmit={() => {
-          return false;
+      <form onSubmit={handleSearchValue}>
+        <input className={'movie-search'} type={'text'} onChange={handleGettingValue} onSubmit={(e) => {
+          e.preventDefault();
         }}></input>
-        <button type={'button'} onClick={handleSearchValue}>Search</button>
+        <button type={'submit'}>Search</button>
       </form>
-      <ul className={"movie-search__list"}>
+      <ul className={'movie-search__list'}>
         {queryOutcome && queryOutcome.map((movie) => (
-          <li key={movie.id} className={"movie-search__item"} onClick={() => displayMovieAbouts(movie.id)}>{movie.title}</li>
+          <li key={movie.id} className={'movie-search__item'}
+              onClick={() => displayMovieAbouts(movie.id)}>{movie.title}</li>
         ))}
       </ul>
     </div>
