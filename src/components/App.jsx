@@ -8,7 +8,7 @@ const MovieAbouts = lazy(() => import('./MovieAbouts/MovieAbouts'));
 export const App = () => {
   return (
     <Routes>
-      <Route path='/' element={
+      <Route path='/goit-react-hw-05-movies' element={
         <Suspense fallback={<div>Loading...</div>}>
           <Home />
         </Suspense>

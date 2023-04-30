@@ -5,7 +5,7 @@ const MovieHeader = () => {
   return (
     <div className={"movie-header"}>
       <p className={"movie-header__home"} onClick={() => {
-        navigate('/');
+        navigate('/goit-react-hw-05-movies');
       }}>Home</p>
       <p className={"movie-header__movies"} onClick={() => {
         navigate('/movies')
