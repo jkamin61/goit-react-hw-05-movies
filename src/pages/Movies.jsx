@@ -9,13 +9,13 @@ const Movies = () => {
   const navigate = useNavigate();
   const [movieQuery, setMovieQuery] = useState();
   const [inputValue, setInputValue] = useState();
-  const [queryOutcome, setQueryOutcome] = useState([]);
+  const [queryOutcome, setQueryOutcome] = useState();
 
   const handleGettingValue = (e) => {
     e.preventDefault();
     setInputValue(e.target.value);
   };
-  const handleSearchValue = (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
     setMovieQuery(inputValue);
   };
@@ -34,12 +34,13 @@ const Movies = () => {
   return (
     <div className={'Movies'}>
       <MovieHeader></MovieHeader>
-      <form onSubmit={handleSearchValue}>
+      <form onSubmit={handleFormSubmit}>
         <input className={'movie-search'} type={'text'} onChange={handleGettingValue} onSubmit={(e) => {
           e.preventDefault();
         }}></input>
         <button type={'submit'}>Search</button>
       </form>
+      {queryOutcome && queryOutcome.length === 0 && <p>No movies</p>}
       <ul className={'movie-search__list'}>
         {queryOutcome && queryOutcome.map((movie) => (
           <li key={movie.id} className={'movie-search__item'}
